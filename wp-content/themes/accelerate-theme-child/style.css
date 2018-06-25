@@ -18,6 +18,14 @@ Text Domain:  accelerate-theme-child
 .button {
 	background: #45ac9d;
 }
+masthead nav ul li {
+	float: left;
+	margin: 0 10px;
+}
+/* featured work on homepage*/
+ul.homepage-featured-work  {
+	list-style: none;
+}
 /*blog post on homepage*/
 .blog-post {
 	width: 50%;
@@ -38,4 +46,31 @@ Text Domain:  accelerate-theme-child
 	font-weight: 700;
 	color: #45ac9d;
 	text-transform: uppercase;
+}
+
+/*Case Studies*/
+
+article.case-study {
+	margin: 40px 0 0;
+}
+aside.case-study-sidebar {
+	float: left;
+	width: 314px;
+	margin: 0 40px 0 0;
+}
+aside.case-study-sidebar h5 {
+	color: lightgray;
+    font-size: 10px;
+    text-transform: none;
+}
+div.case-study-images {
+	float: left;
+	width: 606px;
+}
+div.case-study-images img {
+	display: block;
+	margin-bottom: 50px;
+	border: 1px solid #dddddd;
+	width: 100%;
+	height: auto;
 }
