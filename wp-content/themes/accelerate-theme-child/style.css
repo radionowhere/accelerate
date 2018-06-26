@@ -74,3 +74,37 @@ div.case-study-images img {
 	width: 100%;
 	height: auto;
 }
+
+/*Footer*/
+
+ul.social-media-menu {
+	text-align: right;
+}
+ul.social-media-menu li {
+	display: inline-block;
+}
+.social-media-menu li a:before {
+	display: inline-block;
+	font-family: 'Fontawesome';
+	content: '\f0a9';
+	font-size: 1.25rem;
+}
+.social-media-menu li a[href*="facebook.com"]::before{content:'\f09a';} 
+.social-media-menu li a[href*="twitter.com"]::before{content:'\f099';}
+.social-media-menu li a[href*="linkedin.com"]::before{content:'\f0e1';}  
+
+/*Accessibility*/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
