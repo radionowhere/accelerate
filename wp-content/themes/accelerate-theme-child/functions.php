@@ -16,18 +16,34 @@ function accelerate_child_scripts(){
 	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); 
 }
 add_action( 'wp_enqueue_scripts', 'accelerate_child_scripts' );
-// Add Case Studies custom post type
-function create_custom_post_types() {
-    register_post_type( 'case_studies',
-        array(
-            'labels' => array(
-                'name' => __( 'Case Studies' ),
-                'singular_name' => __( 'Case Study' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array( 'slug' => 'case-studies' ),
-        )
-    );
+
+//Custom post types functions
+	function create_custom_post_types() {
+	// Add Case Studies custom post type
+		    register_post_type( 'case_studies',
+		        array(
+		            'labels' => array(
+		                'name' => __( 'Case Studies' ),
+		                'singular_name' => __( 'Case Study' )
+		            ),
+		            'public' => true,
+		            'has_archive' => true,
+		            'rewrite' => array( 'slug' => 'case-studies' ),
+		        )
+		    );
+    // create a services offered custom post type
+		register_post_type( 'services_offered',
+			array(
+				'labels' => array(
+					'name' => __( 'Services' ),
+					'singular_name' => __( 'Service' )
+				),
+				'public' => true,
+				'has_archive' => true,
+				'rewrite' => array( 'slug' => 'services' ),
+			)
+		);
 }
+
+// Hook this custom post type function into the theme
 add_action( 'init', 'create_custom_post_types' );

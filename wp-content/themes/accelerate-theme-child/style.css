@@ -88,6 +88,13 @@ ul.social-media-menu li {
 	font-family: 'Fontawesome';
 	content: '\f0a9';
 	font-size: 1.25rem;
+	padding: .3em;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	text-align: center;
+	color: #fff;
+	background: #3b3b3b;
 }
 .social-media-menu li a[href*="facebook.com"]::before{content:'\f09a';} 
 .social-media-menu li a[href*="twitter.com"]::before{content:'\f099';}
@@ -107,4 +114,102 @@ ul.social-media-menu li {
   position: absolute !important;
   width: 1px;
   word-wrap: normal !important;
+}
+
+/*Styling Ninja Forms*/
+
+.page-id-47347 .main-content {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nf-form-1-cont {
+	margin-top: 2em;
+}
+.ninja-forms-req-symbol {
+  display: none;
+}
+.nf-form-fields-required {
+	display: none;
+}
+#nf-field-4 {
+	background: #45ac9d;
+	float: right;
+}
+.page-id-47347 p {
+    color: gray;
+}
+.nf-field-label label{
+	font-weight: normal !important;
+	font-size: 15px !important;
+}
+
+/* About page */
+.about-page {
+  background: url("img/taxi-photo.jpg") no-repeat scroll right center / cover rgba(0, 0, 0, 0);
+  height: auto;
+  margin: 0 0 5em;
+  padding: 8em 0;
+  text-align: center;
+}
+.about-hero-content h3 {
+  color: #fff;
+  font-family: 'Open Sans';
+  font-size: 1.4em;
+  font-weight: normal;
+  max-width: 42%;
+  margin: 0 auto;
+}
+.services-list {
+  max-width: 76%;
+  margin: 0 auto;
+}
+.about-services {
+  text-align: center;
+}
+.about-services p {
+  width: 55%;
+}
+.services-offered {
+  margin-top: 68px;
+  margin-bottom: 68px;
+  justify-content: space-between;
+}
+.services-offered-images {
+  float: left;
+}
+.services-offered-images a img {
+  width: 216px;
+}
+.services-offered-sidebar {
+  width: 65%;
+  float: right;
+}
+.services-offered:nth-child(even) {
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-direction: row-reverse; /* Safari 6.1+ */
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.contact-link-section {
+  clear: both;
+  margin: 0 auto;
+  max-width: 75%;
+  border-top: 2px solid #ddd;
+}
+.cta {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.cta h4 {
+  float: left;
+  width: 35%;
+  text-transform: none;
+}
+.cta a {
+  /*width: 25%;*/
+  float: left;
+  margin-top: 20px;
 }
