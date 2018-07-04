@@ -14,23 +14,25 @@ get_header(); ?>
 
 
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php the_content(); ?>
+				<h3><?php echo get_field('about'); ?></h3>
 			<?php endwhile; // end of the loop. ?>
 		</div><!-- .main-content -->
   </div><!-- #primary -->
 
 <section class="services-list">
   <div class="about-services">
-    <h5>Our Services</h5>
-      <p>We take pride in our clients and the content we create for them. Here's a brief overview of our offered services.</p>
+      <?php while ( have_posts() ) : the_post(); ?>
+				<h5><?php echo get_field('intro_title'); ?></h5>
+				<p><?php echo get_field('intro_text'); ?></p>
+			<?php endwhile; // end of the loop. ?> 
   </div>
 
 <!-- remove permalinks if not creating single pages for posts -->
   <div id="primary" class="site-content">
 		<div class="main-content" role="main">
-      <?php query_posts('posts_per_page()&post_type=services_offered'); ?>
+      <?php query_posts('post_type=services_offered'); ?>
 			<?php while ( have_posts() ) : the_post();
-        $icon_1 = get_field("icon_1");
+        $icon_1 = get_field("image");
       ?>
 
       <article class="services-offered clearfix">

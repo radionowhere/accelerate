@@ -25,48 +25,49 @@ get_header(); ?>
 	
 	<section class="featured-work">
 		<div class="site-content">
-			<h4>Featured Work</h4>			
-		<ul class="homepage-featured-work">
+			<h4>Featured Work</h4>
+				<div class="homepage-featured-work-row">			
+						
+							<?php query_posts('posts_per_page=3&post_type=case_studies'); ?>
+									<?php while ( have_posts() ) : the_post(); 
+										$image_1 = get_field("image_1");
+										$size = "medium";
+									?>
+									<div class="individual-featured-work">
 			
-				<?php query_posts('posts_per_page=3&post_type=case_studies'); ?>
-						<?php while ( have_posts() ) : the_post(); 
-							$image_1 = get_field("image_1");
-							$size = "medium";
-						?>
-						<li class="individual-featured-work">
-
-							<figure>
-								<?php echo wp_get_attachment_image($image_1, $size); ?>
-							</figure>
-							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
-						</li>													
-						<?php endwhile; ?> 
-					<?php wp_reset_query(); ?>
-		</ul>
-				</div>
+										<figure>
+											<?php echo wp_get_attachment_image($image_1, $size); ?>
+										</figure>
+										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
+									</div>													
+									<?php endwhile; ?> 
+								<?php wp_reset_query(); ?>
+					</div>
+		</div>
 	</section>
 	
 	<section class="recent-posts">
 		<div class="site-content">
-			<section class="recent-posts">
-				<div class="site-content">
-					<div class="blog-post">
-						<section class="recent-posts">
-							<div class="site-content">
-								<div class="blog-post">
-									<h4>From the Blog</h4>
-										<?php query_posts('posts_per_page=1'); ?>
-											<?php query_posts('posts_per_page=1'); ?>
-												<?php while ( have_posts() ) : the_post(); ?>
-													<h2><?php the_title(); ?></h2>
-													<?php the_excerpt(); ?>																				<?php endwhile; ?> 
-											<?php wp_reset_query(); ?>
-								</div>
-							</div>
-						</section>
-					</div>
-				</div>
-			</section>
+			<div class="blog-post">
+				<h4>From the Blog</h4>
+					<?php query_posts('posts_per_page=1'); ?>
+						<?php query_posts('posts_per_page=1'); ?>
+							<?php while ( have_posts() ) : the_post(); ?>
+								<h2><?php the_title(); ?></h2>
+									<?php the_excerpt(); ?>																				
+										<?php endwhile; ?> 
+									<?php wp_reset_query(); ?>
+			</div>
 		</div>
 	</section>
+<div class="twitter-widget">
+				<h4>Recent Tweet</h4>
+	
+	<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+<div id="secondary" class="widget-area" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-2' ); ?>
+</div>
+<?php endif; ?>
+				<a class="follow-us-link" target="_blank" href="https://twitter.com/Skillcrush">Follow Us ></a>
+</div>
 <?php get_footer(); ?>
