@@ -37,7 +37,7 @@ get_header(); ?>
 
       <article class="services-offered clearfix">
         <div class="services-offered-images">
-          <a href="<?php the_permalink(); ?>">
+          
             <?php if($icon_1) {
               echo wp_get_attachment_image( $icon_1 );
             } ?>

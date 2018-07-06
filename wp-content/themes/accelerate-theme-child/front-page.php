@@ -18,7 +18,7 @@ get_header(); ?>
 		<div class="main-content" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php the_content(); ?>
-				<a class="button" href="<?php echo site_url('/archives/case-studies') ?>">View Our Work</a>
+				<a class="button" href="<?php echo site_url('/case-studies') ?>">View Our Work</a>
 			<?php endwhile; // end of the loop. ?>
 		</div><!-- .main-content -->
 	</div><!-- #primary -->
@@ -36,7 +36,7 @@ get_header(); ?>
 									<div class="individual-featured-work">
 			
 										<figure>
-											<?php echo wp_get_attachment_image($image_1, $size); ?>
+											<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image_1, $size); ?></a>
 										</figure>
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
 									</div>													
@@ -47,7 +47,7 @@ get_header(); ?>
 	</section>
 	
 	<section class="recent-posts">
-		<div class="site-content">
+		<div class="site-content-front-page">
 			<div class="blog-post">
 				<h4>From the Blog</h4>
 					<?php query_posts('posts_per_page=1'); ?>
@@ -58,16 +58,17 @@ get_header(); ?>
 										<?php endwhile; ?> 
 									<?php wp_reset_query(); ?>
 			</div>
+			<div class="twitter-widget">
+							<h4>Recent Tweet</h4>
+				
+				<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+			<div id="secondary" class="widget-area" role="complementary">
+				<?php dynamic_sidebar( 'sidebar-2' ); ?>
+			</div>
+			<?php endif; ?>
+							<a class="follow-us-link" target="_blank" href="https://twitter.com/Skillcrush">Follow Us ></a>
+			</div>
 		</div>
 	</section>
-<div class="twitter-widget">
-				<h4>Recent Tweet</h4>
-	
-	<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-<div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-2' ); ?>
-</div>
-<?php endif; ?>
-				<a class="follow-us-link" target="_blank" href="https://twitter.com/Skillcrush">Follow Us ></a>
-</div>
+
 <?php get_footer(); ?>
